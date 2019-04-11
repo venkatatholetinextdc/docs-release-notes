@@ -90,6 +90,7 @@ If you are running McAfee VirusScan on your Windows OS, Eclipse-based Anypoint S
 
 == Known Issues
 
+* In Studio 7.4EA your API specification is downloaded from Exchange and treated as a JAR dependency, which prevents Studio's `Search` feature from finding text inside your API specification.
 * Studio 7 only supports Mule 4.x projects. Due to the structure of projects, export format, xml and scripting language differences, we do not offer backwards compatibility with Mule 3.x runtimes.
 * Some existing features in Studio 6.x are not yet supported in Studio 7: Custom Policies, API Sync, Anypoint Private Cloud.
 * Anypoint Studio uses your configured default browser to display web content such as Exchange and the Runtime Manager UI when deploying an application to Anypoint Platform. If your default internet browser does not display this content correctly, you can configure Anypoint Studio to use a Mozilla/XULRunner runtime environment as the underlying renderer for the Web UI. +
