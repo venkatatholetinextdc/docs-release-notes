@@ -1,7 +1,0 @@
-= 1.4.1 Migration Guide
-ifndef::env-site,env-github[]
-include::_attributes.adoc[]
-endif::[]
-:keywords: release notes, migration
-
-The i18n code has changed throughout the codebase. See https://docs.archive.mulesoft.com/mule-user-guide/v/3.2/internationalizing-strings[Internationalizing Strings] for more information.

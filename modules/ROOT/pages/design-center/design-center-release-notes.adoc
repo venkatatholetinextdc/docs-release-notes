@@ -1,8 +1,0 @@
-= Design Center Release Notes
-ifndef::env-site,env-github[]
-include::_attributes.adoc[]
-endif::[]
-:keywords: release notes, design center, flow designer, api designer, mule application, editor, raml, swagger
-
-* xref:design-center/design-center-release-notes-api_specs.adoc[API Designer]
-* xref:design-center/design-center-release-notes-mule-apps.adoc[Flow Designer]
