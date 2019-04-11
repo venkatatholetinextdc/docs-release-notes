@@ -18,7 +18,7 @@ This new release provides:
 
 == Fixed Issues
 
-* Fixed issue when no target runtime was defined, the auto-discovery used a runtime version previous to the minimum Mule version required.
+* Fixed issue causing the auto-discovery to use a runtime version previous to the minimum Mule version required, whenever no target runtime was defined,
 * Fixed issue that caused MUnit `retrieve`/`remove` operations to get wrapped in `TypedValue`.
 * Fixed issue causing MUnit to mark tests that failed because of an exhausted `Until Successful` scope as errors.
 * Fixed error that caused Jenkins to not mark as failed modules with failing MUnit tests.
@@ -48,7 +48,7 @@ Coverage was only calculated for the first parameterized suite run, because it w
 ----
 +
 With `unordered` set to `true`, the `{first : 1, second: 2}` expression can match to both `{first : 1, second: 2}` and `{second: 2, first : 1}`.
-* MTF not follows a runtime order when executing tests.
+* When running MTF tests, the framework now executes those tests in an ordered manner, from the lowest version of the runtime to the latest.
 * Created  the concept of metadata test.
 * Created `get-metadata-keys` scope.
 * Created `get-input-metadata` scope.
