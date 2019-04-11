@@ -1,2 +1,3 @@
 .xref:index.adoc[Release Notes]
 * xref:munit/munit-release-notes.adoc[MUnit Release Notes]
+  ** xref:munit/munit-2.2.0-beta2-release-notes.adoc[MUnit 2.2.0BETA2 Release Notes]

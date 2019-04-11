@@ -1,0 +1,66 @@
+= MUnit 2.2.0 BETA2 Release Notes
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:keywords: munit, testing, unit testing, release notes
+
+This new release provides:
+
+* Metadata Testing.
+* Run tests against different JVMS.
+* Ignore a suite/test based on the Mule version or OS.
+* Support for Java 11.
+
+== Migration Guidance
+
+`Queue` operations now live in the `munit-tools` Mule plugin and not in the `mtf-tools`. The namespace for these operations changed from `mtf:queue` to `munit-tools:queue`. +
+`mtf-tools` currently provides functionality to test Metadata.
+
+== Fixed Issues
+
+* Fixed issue when no target runtime was defined, the auto-discovery used a runtime version previous to the minimum Mule version required.
+* Fixed issue that caused MUnit `retrieve`/`remove` operations to get wrapped in `TypedValue`.
+* Fixed issue causing MUnit to mark tests that failed because of an exhausted `Until Successful` scope as errors.
+* Fixed error that caused Jenkins to not mark as failed modules with failing MUnit tests.
+* Accumulate Total Coverage for Parametrized Runs. +
+* MUnit now calculates the whole coverage for all runs within a parameterized tests. +
+Coverage was only calculated for the first parameterized suite run, because it was the first application deployed.
+* Fixed issue that caused MUnit to run tests using both community and enterprise edition runtimes, when configured to use specifically one.
+* Fixded issue causing a `NullPointer exception` when having an operation inside a `before`/`after-test`.
+* Iterable Matchers now work with Iterators.
+* Fixed `Concurrent modification exception` when publishing to queue in Java 11.
+* If `AssertionError` is thrown with a cause, test is now marked as `FAILURE` instead of `ERROR`.
+
+== Resolved Tasks
+
+* Created Metadata testing spec.
+* Migrated Metadata tests for the Java Module.
+
+== Enhancement Requests
+
+* The `equalTo` matcher can now ignore key order:
++
+[source,XML,linenums]
+----
+<munit-tools:assert-that
+  expression="#[{ first : 1, second: 2 }]"
+  is="#[MunitTools::equalTo({ second: 2, first : 1 }, {unordered: true})]"/>
+----
++
+With `unordered` set to `true`, the `{first : 1, second: 2}` expression can match to both `{first : 1, second: 2}` and `{second: 2, first : 1}`.
+* MTF not follows a runtime order when executing tests.
+* Created  the concept of metadata test.
+* Created `get-metadata-keys` scope.
+* Created `get-input-metadata` scope.
+* Created `get-output-metadata` scope.
+* Created `get-attributes-metadata` scope.
+* Created `Assert Type` processor.
+* Improved error message when no repositories are available to discover runtimes.
+* Created functions to ignore a test based on the context (OS/Mule Server).
+* The `assert-equals` processor now receives literal on the expected parameter.
+* The `dequeue` operation now informs the name of the queue when it times out.
+
+
+== See Also
+
+* xref:2.2@munit::index.adoc[MUnit 2.0 BETA 2 Documentation].

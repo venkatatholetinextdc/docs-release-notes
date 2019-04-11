@@ -4,3 +4,4 @@ include::_attributes.adoc[]
 endif::[]
 :keywords: munit, testing, unit testing, release notes
 
+* xref:munit/munit-2.2.0-beta2-release-notes.adoc[MUnit 2.2.0BETA2 Release Notes]
