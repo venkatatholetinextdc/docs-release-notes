@@ -4,9 +4,50 @@ include::_attributes.adoc[]
 endif::[]
 :keywords: b2b, x12, edifact, release notes
 
-*August 2018*
+*April 2019*
 
 _Premium_
+
+== 1.3.3
+
+*April XX, 2019*
+
+This release fixes a number of issues in both EDIFACT and X12 EDI Connectors.
+
+EDIFACT EDI Connector:
+
+* Fix infinite loop when missing UNT segment.
+* Add specific error message when missing UNT segment.
+* Support integer value types for implied decimal format.
+* Correct escape character handling on read.
+* Eliminate NPE when space value set for delimiter character.
+
+X12 EDI Connector:
+
+* Support integer value types for implied decimal format.
+* Correctly handle multiple HIPAA transaction sets in a group.
+* Identify the ISA segment when it's the cause of a write error.
+
+=== Compatibility
+
+EDIFACT EDI Connector v1.3.3 is compatible with the following:
+
+[%header,cols="30a,70a"]
+|===
+|Application/Service |Version
+|Mule Runtime |Mule 3.6.0 and later
+|EDIFACT |d93a, d95b, d96a, d97a, d98b, d99a, d99b, d00a, d01b, d02a, and d03a
+|===
+
+X12 EDI Connector v1.3.3 is compatible with the following:
+
+[%header,cols="30a,70a"]
+|===
+|Application/Service |Version
+|Mule Runtime |Mule 3.6.0 and later
+|X12 |003010, 003020, 003030, 003040, 003050, 003060, 003070, 004010, 004020, 004030, 004040, 004050, 004060, 005010, 005020, 005030, 005040, 005050, and 006020
+|HIPAA |005010X212, 005010X214B3, 005010X217, 005010X218, 005010X220A1, 005010X221A1, 005010X222A1, 005010X222A2, 005010X223A2, 005010X223A3, 005010X224A2, 005010X224A3, and 005010X279A1
+|===
 
 == 1.3.2
 
